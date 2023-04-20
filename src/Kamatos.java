@@ -16,8 +16,21 @@ public class Kamatos {
 
     private double bekerDatas() {
         String betetStr = beker("Betét: ");
+        if (!this.checkInput(betetStr)) {
+            System.err.println("Hiba! Csak számot lehet beírni");
+            throw new NumberFormatException();
+        }
         String nevlegesStr = beker("Névleges kamat (%): ");
+        if (!this.checkInput(nevlegesStr)) {
+            System.err.println("Hiba! Csak számot lehet beírni");
+            throw new NumberFormatException();
+        }
         String tokesites_szamStr = beker("Évenkénti tőkésítések száma: ");
+        if (!this.checkInput(tokesites_szamStr)) {
+            System.err.println("Hiba! Csak számot lehet beírni");
+            throw new NumberFormatException();
+        }
+
         double betet = Double.parseDouble(betetStr);
         double nevleges = Double.parseDouble(nevlegesStr);
         double tokesites_szam = Double.parseDouble(tokesites_szamStr);
